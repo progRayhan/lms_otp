@@ -7,6 +7,7 @@ class OTPModel(models.Model):
     identifier = models.CharField(max_length=100)
     reason = models.CharField(max_length=60)
     otp_code = models.CharField(max_length=20)
+    message = models.TextField(null=True, blank=True)
     status = models.CharField(
         max_length=20, 
         choices=OtpStatus.choices, 
