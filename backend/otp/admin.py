@@ -1,3 +1,13 @@
 from django.contrib import admin
+from .models import OTPModel
 
-# Register your models here.
+
+@admin.register(OTPModel)
+class OtpAdmin(admin.ModelAdmin):
+    list_display = (
+        "otp_for",
+        "identifier",
+        "reason",
+        "status",
+        "expires_at",
+    )
